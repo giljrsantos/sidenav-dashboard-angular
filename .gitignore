@@ -5,7 +5,10 @@
 /tmp
 /out-tsc
 /bazel-out
-
+.vscode
+.angular
+.editorconfig
+dadosGitHub.txt
 # Node
 /node_modules
 npm-debug.log

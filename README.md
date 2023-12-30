@@ -1,27 +1,47 @@
-# Dashboard
+# SideNav Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+Este projeto é um SideNav e um Dashboard. Os componentes foram criados através de linha de comando.  Para criar esses dois components, tem que esta com a biblioteca de interface `@angular/material`.
 
-## Development server
+## Versões
+```json
+Angular CLI: 16.2.11
+Node: 18.16.0
+Package Manager: npm 9.5.1
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Criando projeto e instalando biblíoteca `@angular/material`
+    1 - ng new <nomeProjeto>
+    2 - ng add @angular/material
 
-## Code scaffolding
+## Criando components
+    1 - ng g @angular/material:nav side-nav
+    2 - ng g @angular/material:dashboard dashboard
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+No arquivo `app.component.html` onde aparece o conteúdo da projeto, apague todo o conteúdo da página, e em seguida importa o sidenav que foi criado `<app-side-nav></app-side-nav>`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para importar o componente `dashboard` dentro do componente `side-nav` temos que criar uma diretiva do Agular de no `ng-content`, ela permite passagem de conteúdo entre componentes.
+```html
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Side Nav</span>
+    </mat-toolbar>
+    <ng-content></ng-content><!--ng-content-->
+  </mat-sidenav-content>
+```
 
-## Running unit tests
+Após colocar a diretiva `ng-content`, basta importar o componente `dashboard` dentro `side-nav` que esta no arquivo `app.component.html` como se fosse um conteúdo.
+```html
+<app-menu>
+  <app-dashboard />
+</app-menu>
+```
+Sendo assim, tudo que for feito no componente `dashboard` vai refletir na página.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### screen
+<img src="src\assets\img\1.png" width="100%">
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h1 align="center">💻 Desenvolvido Por: Gilberto Júnior</h1>
