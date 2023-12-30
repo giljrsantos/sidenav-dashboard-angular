@@ -35,9 +35,9 @@ Para importar o componente `dashboard` dentro do componente `side-nav` temos que
 
 Após colocar a diretiva `ng-content`, basta importar o componente `dashboard` dentro `side-nav` que esta no arquivo `app.component.html` como se fosse um conteúdo.
 ```html
-<app-menu>
+<app-side-nav>
   <app-dashboard />
-</app-menu>
+</app-side-nav>
 ```
 Sendo assim, tudo que for feito no componente `dashboard` vai refletir na página.
 
